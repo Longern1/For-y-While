@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedir numeros</title>
+    <link rel="stylesheet" href="bucles.css">
+
+</head>
+<body>
+
+    <div class="ejercicio">
+        <h3>Ingreso de Números</h3>
+        <input type="number" id="numeroIngresado" placeholder="Ingresa un número">
+        <button onclick="pedirNumeros()">Agregar Número</button>
+        <p id="resultadoWhile"></p>
+    </div>
+
+
+    <script>
+
+let numerosIngresados = [];
+function pedirNumeros() {
+    const numero = parseInt(document.getElementById("numeroIngresado").value);
+
+    while (numero >= 0) {
+        numerosIngresados.push(numero);
+        document.getElementById("resultadoWhile").innerText = 
+            `Números ingresados: ${numerosIngresados.join(", ")}`;
+        return; 
+    }
+
+    document.getElementById("resultadoWhile").innerText = 
+        `Número negativo ingresado. Se detiene la entrada. Números: ${numerosIngresados.join(", ")}`;
+    document.getElementById("numeroIngresado").value = "";  
+}
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma y promedio</title>
+    <link rel="stylesheet" href="bucles.css">
+</head>
+<body>
+    <div class="ejercicio">
+        <h3>Suma y Promedio</h3>
+        <input type="text" id="numbers" placeholder="Ingresa números separados por coma">
+        <button onclick="calcularSumaYPromedio()">Calcular Suma y Promedio</button>
+        <p id="resultadoFor"></p>
+    </div>
+    <script>
+                function calcularSumaYPromedio() {
+            const numeros = document.getElementById("numbers").value.split(",").map(Number);
+            let sumaTotal = 0;
+
+            for (let i = 0; i < numeros.length; i++) {
+                sumaTotal += numeros[i];
+            }
+
+            const promedio = sumaTotal / numeros.length;
+            document.getElementById("resultadoFor").innerText = 
+                `Suma total: ${sumaTotal}, Promedio: ${promedio}`;
+        }
+
+    </script>
+</body>
+</html>

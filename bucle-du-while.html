@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bucles.css">
+    <title>verificar contraseña</title>
+</head>
+<body>
+    <div class="ejercicio">
+        <h3>Verificación de Contraseña</h3>
+        <input type="text" id="password" placeholder="Ingresa la contraseña">
+        <button onclick="verificarContraseña()">Verificar</button>
+        <p id="resultadoDoWhile"></p>
+    </div>
+    <script>
+
+const contraseñaCorrecta = "1234";  
+function verificarContraseña() {
+    let password;
+    do {
+        password = document.getElementById("password").value;
+
+        if (password === contraseñaCorrecta) {
+            document.getElementById("resultadoDoWhile").innerText = 
+                "Contraseña correcta, acceso concedido.";
+            break;
+        } else {
+            document.getElementById("resultadoDoWhile").innerText = 
+                "Contraseña incorrecta. Inténtalo nuevamente.";
+        }
+    } while (password !== contraseñaCorrecta);
+
+    document.getElementById("password").value = "";  
+}
+    </script>
+</body>
+</html>
